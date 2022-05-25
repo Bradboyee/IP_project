@@ -1,0 +1,32 @@
+<?php
+
+  include("connect_mysql.php");
+    
+  //VAC
+  $VaccineProductFirst = $_REQUEST['VaccineProductFirst'];
+  $VaccineProductSec =$_REQUEST['VaccineProductSec'];
+  $VaccineProductThird = $_REQUEST['VaccineProductThird'];
+  $VaccineVaccinatedNumber = $_REQUEST['VaccineVaccinatedNumber'];
+  $VaccineDate = $_REQUEST['VaccineDate'];
+//ATK
+
+
+
+//VAC
+$sql = "INSERT INTO vaccine (Vaccine_Product_First, Vaccine_Product_Sec, Vaccine_Product_Third,Vaccine_VaccinatedNumber,Vaccine_Date	) VALUES ('$VaccineProductFirst', 
+    '$VaccineProductSec','$VaccineProductThird','$VaccineVaccinatedNumber','$VaccineDate')";
+
+
+    
+  if(mysqli_query($conn, $sql)){
+      echo "<script>location.href='vaccine.php';alert('Add vaccine');</script>";
+      
+  } else{
+      echo "ERROR: Hush! Sorry $sql. " 
+          . mysqli_error($conn);
+  }
+
+    
+  // Close connection
+  mysqli_close($conn);
+  ?>  

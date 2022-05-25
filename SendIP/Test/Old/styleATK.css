@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;1,200;1,300&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Raleway, sans-serif;
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-size: 14px;
+  background: linear-gradient(90deg, #C7C5F4, #776BCC);
+  padding: 20px;
+  text-align: center;
+}
+
+.wrapper {
+  width: 250px;
+  height: 350px;
+  margin: 60px auto;
+  perspective: 600px;
+  text-align: left;
+}
+
+.rec-prism {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+  transition: transform 0.5s ease-in;
+}
+
+.face {
+  position: absolute;
+  width: 250px;
+  padding: 20px;
+  background: #fff;
+  border: 3px solid #642e7c;
+  border-radius: 3px;
+}
+.face .content {
+  color: #666;
+}
+.face .content h2 {
+  font-size: 1.2em;
+  color: #642e7c;
+}
+.face .content .field-wrapper {
+  margin-top: 30px;
+  position: relative;
+}
+.face .content .field-wrapper label {
+  position: absolute;
+  pointer-events: none;
+  font-size: 0.85em;
+  top: 40%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: all ease-in 0.25s;
+  color: #999999;
+}
+.face .content .field-wrapper input[type=email], .face .content .field-wrapper input[type=tel], .face .content .field-wrapper input[type=text], .face .content .field-wrapper input[type=password], .face .content .field-wrapper button[type=submit], .face .content .field-wrapper textarea {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.face .content .field-wrapper input[type=email]:focus, .face .content .field-wrapper input[type=tel]:focus, .face .content .field-wrapper input[type=text]:focus, .face .content .field-wrapper input[type=password]:focus, .face .content .field-wrapper button[type=submit]:focus, .face .content .field-wrapper textarea:focus {
+  outline: none;
+}
+.face .content .field-wrapper input[type=email], .face .content .field-wrapper input[type=tel], .face .content .field-wrapper input[type=text], .face .content .field-wrapper input[type=password], .face .content .field-wrapper textarea {
+  width: 100%;
+  border: none;
+  background: transparent;
+  line-height: 2em;
+  border-bottom: 1px solid #642e7c;
+  color: #666;
+}
+.face .content .field-wrapper input[type=email]::-webkit-input-placeholder, .face .content .field-wrapper input[type=tel]::-webkit-input-placeholder, .face .content .field-wrapper input[type=text]::-webkit-input-placeholder, .face .content .field-wrapper input[type=password]::-webkit-input-placeholder, .face .content .field-wrapper textarea::-webkit-input-placeholder {
+  opacity: 0;
+}
+.face .content .field-wrapper input[type=email]::-moz-placeholder, .face .content .field-wrapper input[type=tel]::-moz-placeholder, .face .content .field-wrapper input[type=text]::-moz-placeholder, .face .content .field-wrapper input[type=password]::-moz-placeholder, .face .content .field-wrapper textarea::-moz-placeholder {
+  opacity: 0;
+}
+.face .content .field-wrapper input[type=email]:-ms-input-placeholder, .face .content .field-wrapper input[type=tel]:-ms-input-placeholder, .face .content .field-wrapper input[type=text]:-ms-input-placeholder, .face .content .field-wrapper input[type=password]:-ms-input-placeholder, .face .content .field-wrapper textarea:-ms-input-placeholder {
+  opacity: 0;
+}
+.face .content .field-wrapper input[type=email]:-moz-placeholder, .face .content .field-wrapper input[type=tel]:-moz-placeholder, .face .content .field-wrapper input[type=text]:-moz-placeholder, .face .content .field-wrapper input[type=password]:-moz-placeholder, .face .content .field-wrapper textarea:-moz-placeholder {
+  opacity: 0;
+}
+.face .content .field-wrapper input[type=email]:focus + label, .face .content .field-wrapper input[type=email]:not(:placeholder-shown) + label, .face .content .field-wrapper input[type=text]:focus + label, .face .content .field-wrapper input[type=text]:not(:placeholder-shown) + label, .face .content .field-wrapper input[type=tel]:focus + label, .face .content .field-wrapper input[type=tel]:not(:placeholder-shown) + label, .face .content .field-wrapper input[type=password]:focus + label, .face .content .field-wrapper input[type=password]:not(:placeholder-shown) + label, .face .content .field-wrapper textarea:focus + label, .face .content .field-wrapper textarea:not(:placeholder-shown) + label {
+  top: -35%;
+  color: #42509e;
+}
+.face .content .field-wrapper button[type=submit] {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  width: 100%;
+  background: #642e7c;;
+  line-height: 2em;
+  color: #fff;
+  border: 1px solid #642e7c;
+  border-radius: 3px;
+  padding: 5px;
+}
+.face .content .field-wrapper button[type=submit]:hover {
+  opacity: 0.9;
+}
+.face .content .field-wrapper button[type=submit]:active {
+  transform: scale(0.96);
+}
+.face .content .field-wrapper textarea {
+  resize: none;
+  line-height: 1em;
+}
+.face .content .field-wrapper textarea:focus + label, .face .content .field-wrapper textarea:not(:placeholder-shown) + label {
+  top: -25%;
+}
+
+.face-front {
+  transform: rotateY(0deg) translateZ(125px);
+}
+.face-top {
+  height: 250px;
+  transform: rotateX(90deg) translateZ(125px);
+}
+.face-back {
+  transform: rotateY(180deg) translateZ(125px);
+}
+.face-right {
+  transform: rotateY(90deg) translateZ(125px);
+}
+.face-left {
+  transform: rotateY(-90deg) translateZ(125px);
+}
+.face-bottom {
+  height: 250px;
+  transform: rotateX(-90deg) translateZ(225px);
+}
+
+h1 {
+  font-size: 1.0em;
+  color: #642e7c;
+}
+
+.nav {
+  margin: 20px 0;
+  padding: 0;
+}
+.nav li {
+  display: inline-block;
+  list-style-type: none;
+  font-size: 1.2em;
+  margin: 0 10px;
+  color: #fff;
+  font-weight: bold;
+  position: relative;
+  cursor: pointer;
+}
+.nav li:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20px;
+  border-bottom: 1px solid #fff;
+  transition: all ease-in 0.25s;
+}
+.nav li:hover:after {
+  width: 100%;
+}
+
+.psw, .signup, .singin {
+  display: block;
+  margin: 20px 0;
+  font-size: 0.75em;
+  text-align: center;
+  color: #42509e;
+  cursor: pointer;
+}
+
+small {
+  font-size: 0.7em;
+}
+
+@-webkit-keyframes success {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(0) scale(0);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+  }
+}

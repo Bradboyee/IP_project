@@ -1,0 +1,101 @@
+	<?php
+		session_start();
+		include('connect.php');
+	?>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Manager</title>
+		<link rel="stylesheet" href="./css/style.css">
+		<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="sidebar">
+				<h2>Manager Page</h2>
+				<ul>
+                    <li class="active"><a href="./Manager-Driver.html"><i class='bx bxs-car'></i>Driver</a></li>
+                    <li><a href="./Manager-Customer.html"><i class='bx bx-user'></i></i>Customer</a></li>
+					<li><a href="./Manager-Trip.html"><i class='bx bxs-detail'></i>Trip Details</a></li>
+					<li><a href="./Manager-Review.html"><i class='bx bx-message-rounded-add' ></i>Review</a></li>
+					<li><a href="./Manager-Report.html"><i class='bx bxs-report'></i>Report</a></li>
+				</ul>
+				<div class="account">
+					<span>Account</span>
+				</div>
+			</div>
+			<div class="main">
+                <div class="head">
+                    <h3>Driver</h3>
+                </div>
+                <div class="body">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Name</th>
+								<th>Phone number</th>
+								<th>Address</th>
+								<th>Workplace</th>
+								<th>Delete</th>
+							</tr>
+						</thead>
+						<tbody>
+						 <?php
+                $sql = "SELECT * FROM driver";
+                $result = mysqli_query($conn, $sql);
+
+                ////การเช็กว่าข้อมูลมีมากกว่า 1 row 
+                // if (mysqli_num_rows($result) > 0) 
+                // {
+                // เเสดงข้อมูลจากฐานข้อมูล
+                while ($item = mysqli_fetch_assoc($result)) { ?>
+							<tr>
+								<td>Driver-001</td>
+								<td>ปิยะพัทธ์ กาญจนอาคม</td>
+								<td>062-443-6279</td>
+								<td>15/24 ถ.ศรจีันทร์ซ.21 อ.เมือง ขอนแก่น</td>
+								<td>วัดโบสถ์</td>
+								<td><i class='bx bxs-checkbox-minus'></i></td>
+							</tr>
+							<tr>
+								<td>Driver-002</td>
+								<td>ขวัญชนก ป้องภัย</td>
+								<td>085-713-7306</td>
+								<td>61 ม.5 บ้านนา วชิรบารมี พิจิตร</td>
+								<td>นครชาติตระการ</td>
+								<td><i class='bx bxs-checkbox-minus'></i></td>
+							</tr>
+							<tr>
+								<td>Driver-003</td>
+								<td>ดาว บ้านดอน</td>
+								<td>088-442-06679</td>
+								<td>340/1 บางนา - ตราด บางบ่อ บางบ่อ สมุทรปราการ</td>
+								<td>เนินมะปราง</td>
+								<td><i class='bx bxs-checkbox-minus'></i></td>
+							</tr>
+							<tr>
+								<td>Driver-004</td>
+								<td>กัญพัชญ์ เจริญทิพย์</td>
+								<td>086-360-0248</td>
+								<td>177/1 หมู่ที่ 19 พิษณุโลก-หล่มสัก วังนกแอ่น วังทอง พิษณุโลก</td>
+								<td>พรหมพิราม</td>
+								<td><i class='bx bxs-checkbox-minus'></i></td>
+							</tr>
+							<tr>
+								<td>Driver-005</td>
+								<td>พีรยา บุญดี</td>
+								<td>091-636-0248</td>
+								<td>239/102 หมู่ที่ 1 สระบุรี - หล่มสัก ชอนไพร เมือง เพชรบูรณ์</td>
+								<td>เมือง</td>
+								<td><i class='bx bxs-checkbox-minus'></i></td>
+							</tr>
+						</tbody>
+					</table>
+                </div>
+            </div>
+		</div>
+	</body>
+</html>
